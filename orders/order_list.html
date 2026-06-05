@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Заказы</title>
+</head>
+<body>
+
+<h1>Заказы</h1>
+
+<a href="/">Товары</a>
+
+<table border="1">
+<tr>
+    <th>Номер заказа</th>
+    <th>Товар</th>
+    <th>Статус</th>
+</tr>
+
+{% for order in orders %}
+<tr>
+    <td>{{ order.order_number }}</td>
+    <td>{{ order.product }}</td>
+    <td>{{ order.status }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>
