@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Магазин игрушек</title>
+</head>
+<body>
+
+<h1>Каталог товаров</h1>
+<form method="get">
+    <input
+        type="text"
+        name="q"
+        placeholder="Поиск товара"
+    >
+
+    <button type="submit">
+        Найти
+    </button>
+</form>
+<a href="?sort=price">
+    Цена ↑
+</a>
+
+|
+
+<a href="?sort=-price">
+    Цена ↓
+</a>
+
+<br><br>
+<br>
+<form method="get">
+
+    <select name="supplier">
+        <option value="">Все поставщики</option>
+        <option value="Поставщик 1">Поставщик 1</option>
+        <option value="Поставщик 2">Поставщик 2</option>
+    </select>
+
+    <button type="submit">
+        Фильтр
+    </button>
+
+</form>
+
+<br>
+<table border="1">
+    <tr>
+        <th>Артикул</th>
+        <th>Название</th>
+        <th>Цена</th>
+    </tr>
+
+    {% for product in products %}
+    <tr>
+        <td>{{ product.article }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
